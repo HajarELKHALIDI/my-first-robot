@@ -14,23 +14,23 @@ Library    RPA.Robocorp.Vault
 
 *** Tasks ***
 Order robots from RobotSpareBin Industries Inc.
-    Open RobotSpareBin
-    Get url from vault file and download it
+    Open RobotSpareBin from user input
+    Get csv url from vault file and download it
     Fill in orders form from csv file and create an archive of the pdfs
 
 
 
 *** Keywords ***
-Open RobotSpareBin
-    ${order_url}=    Get Value From User    please enter the URL    
+Open RobotSpareBin from user input
+    ${order_url}=    Get Value From User    please enter the URL    # in this example the url provide is https://robotsparebinindustries.com/#/robot-order  
     Open Available Browser    ${order_url}    
-Get url from vault file and download it
+Get csv url from vault file and download it
     ${url}=    Get Secret    url
     Download    ${url}[csv_url]    overwrite=True
 
 Fill in one person's order
     [Arguments]    ${order}
-    Set Selenium Speed    2
+    Set Selenium Speed    0.5  
     Click Button    xpath://*[@id="root"]/div/div[2]/div/div/div/div/div/button[1]
     Select From List By Value    id:head    ${order}[Head]
     Wait Until Element Is Visible    xpath://*[@id="id-body-${order}[Body]"]
