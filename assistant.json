@@ -1,0 +1,7 @@
+{
+    "assistant_urls":{
+        "Linux":"https://downloads.robocorp.com/assistant/releases/robocorp-assistant-linux.AppImage",
+        "Windows":"https://downloads.robocorp.com/assistant/releases/robocorp-assistant-win-1.6.3.exe",
+        "Mac":"https://downloads.robocorp.com/assistant/releases/robocorp-assistant-mac-1.6.3.dmg"
+    }
+}
